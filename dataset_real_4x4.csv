@@ -1,0 +1,17 @@
+a_id,a_nombre,b_id,b_nombre,score
+A1,mejora a campo,B1,Adolfo López Mateos,0.0
+A1,mejora a campo,B2,Alianza Popular,0.047062692720227985
+A1,mejora a campo,B3,Atencingo,1.0
+A1,mejora a campo,B4,Bellavista,0.46607199255888193
+A2,mejora a fábrica,B1,Adolfo López Mateos,0.0
+A2,mejora a fábrica,B2,Alianza Popular,0.5380093453248256
+A2,mejora a fábrica,B3,Atencingo,1.0
+A2,mejora a fábrica,B4,Bellavista,0.30224086821082236
+A3,mejora a eficiencia,B1,Adolfo López Mateos,0.256293858543719
+A3,mejora a eficiencia,B2,Alianza Popular,0.15371753213115355
+A3,mejora a eficiencia,B3,Atencingo,1.0
+A3,mejora a eficiencia,B4,Bellavista,0.0
+A4,mejora integral,B1,Adolfo López Mateos,0.0
+A4,mejora integral,B2,Alianza Popular,0.19066780994100196
+A4,mejora integral,B3,Atencingo,1.0
+A4,mejora integral,B4,Bellavista,0.33957178860881926
