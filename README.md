@@ -206,3 +206,38 @@ al subconjunto. - Sin restricciones presupuestales u operativas.
 3.  modificar la línea: DATASET_CSV_PATH = Path("data/dataset_real_4x4.csv")
     del punto 14, sustituir por url raw del archivo.
 4.  Ejecutar colab celda por celda.
+
+## Preguntas
+
+¿Cuál fue la mejor asignación encontrada?
+Paquete									Ingenio
+A1: Mejora del rendimiento en campo		B4: Bellavista
+A2: Mejora del desempeño en fábrica		B2: Alianza Popular
+A3: Mejora de proceso					B1: Adolfo López Mateos
+A4: Mejora integral						B3: Atencingo
+
+¿Cuál fue su score en el dominio?
+El score total fue:
+2.2603751964
+Como el modelo está formulado como minimización, este valor corresponde a la menor suma de scores normalizados encontrada bajo las restricciones.
+
+¿La asignación cumple todas las restricciones?
+Sí. Cada paquete se asigna exactamente una vez y cada ingenio recibe exactamente un paquete.
+
+¿QAOA local observó el óptimo clásico?
+Si QAOA encontró la misma asignación, pero con valores un poco distintos
+
+¿Qué tan frecuente fue observar soluciones factibles?
+Poco frecuente
+
+¿Qué limitaciones tiene el modelo 4×4?
+El modelo es una instancia pequeña y simplificada. Sólo considera cuatro paquetes y cuatro ingenios, no incluye presupuesto, capacidad real de implementación, ubicación geográfica, costos, tiempos, impacto social ni restricciones operativas. Además la normalización produce muchos valores cercanos al cero o al uno.
+
+¿Qué cambiaría si el dataset creciera?
+Aumentaría el número de variables binarias. Si hubiera m paquetes y n ingenios, habría m×n variables. El QUBO y el circuito QAOA serían más grandes, aumentando el costo computacional y la dificultad de ejecutarlo en hardware real.
+
+¿Qué riesgos éticos existen y cómo se mitigaron?
+El riesgo principal es interpretar el modelo como una decisión automática de asignación de recursos. Se mitigó usando datos públicos agregados, explicando la fórmula de score y presentando el resultado como una herramienta exploratoria, no como una recomendación definitiva.
+
+Si se usó hardware real, ¿cómo compara contra QAOA local?
+Se ejecutó en ibm_fez con 512 shots. El hardware real encontró el óptimo clásico con energía -2.260375 y score 2.260375, mientras que QAOA local sin reparación obtuvo como mejor muestra energía -2.133875. Además, el hardware tuvo mayor probabilidad de factibilidad (2.15%) que QAOA local (1.90%) y sí observó el óptimo clásico (0.195%), mientras que QAOA local no lo observó directamente.
