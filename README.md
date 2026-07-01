@@ -135,7 +135,53 @@ A4 	0 	0 	0 	1
 0 	Clásico exacto 	-2.260375 	2.260375 	True 	NaN 	NaN
 1 	QAOA local: mejor muestra 	-2.133875 	2.133875 	True 	0.023316 	0.000996
 
-**Si se usó hardware real o pipeline híbrido:** N/A
+**Si se usó hardware real o pipeline híbrido:** Sí
+qiskit_runtime_service._discover_account:WARNING:2026-07-01 04:58:08,108: Loading account with the given token. A saved account will not be used.
+
+Backend: ibm_fez
+Job ID: d929spr57qjs73b7ktl0
+Estado inicial: QUEUED
+Profundidad ISA: 446
+Operaciones ISA: {'sx': 545, 'rz': 425, 'cz': 255, 'measure': 16, 'barrier': 1}
+Estado final: DONE
+Shots recibidos: 512
+Bitstrings distintos: 480
+
+
+Reparación local disponible: True
+Reparación hardware disponible: True
+
+Tabla comparativa de métodos
+
+ 	método 	shots 	energía_mejor_observada 	energía_media_muestreo 	score_mejor_observado 	score_medio_muestreo 	factible_mejor_observado 	probabilidad_factible 	probabilidad_óptimo_clásico 	bitstring_mejor
+0 	Clásico exacto 	NaN 	-2.260375 	NaN 	2.260375 	NaN 	True 	NaN 	NaN 	0100000100101000
+1 	QAOA local 	2000.0 	-2.133875 	17.639481 	2.133875 	1.645519 	True 	0.019000 	0.000000 	1000000100100100
+2 	QAOA local reparado 	2000.0 	-2.260375 	-2.203027 	2.260375 	2.203027 	True 	1.000000 	0.634500 	0100000100101000
+3 	Hardware real 	512.0 	-2.260375 	30.439654 	2.260375 	2.353315 	True 	0.021484 	0.001953 	0100000100101000
+4 	Hardware real reparado 	512.0 	-2.260375 	-2.204540 	2.260375 	2.204540 	True 	1.000000 	0.642578 	0100000100101000
+
+Curvas acumuladas, local vs hardware
+
+método 	shots_acumulados 	mejor_energía_acumulada 	brecha_mejor_energía_% 	factibilidad_% 	óptimo_observado_%
+0 	QAOA local 	1 	20.000000 	984.808860 	0.000000 	0.0
+1 	QAOA local 	9 	7.656347 	438.720177 	0.000000 	0.0
+2 	QAOA local 	17 	-1.538009 	31.957785 	11.764706 	0.0
+3 	QAOA local 	25 	-1.538009 	31.957785 	8.000000 	0.0
+4 	QAOA local 	33 	-1.538009 	31.957785 	9.090909 	0.0
+
+Lectura automática local vs hardware
+
+Lectura automática:
+- Hardware real igualó o mejoró la mejor energía observada por QAOA local.
+- Hardware real tuvo igual o mayor proporción de muestras factibles que QAOA local.
+- Hardware real observó el óptimo clásico con igual o mayor frecuencia que QAOA local.
+
+Lectura con reparación clásica:
+- Hardware reparado igualó o mejoró la mejor energía local reparada.
+
+Regla de reporte:
+- Contra el clásico exacto, QAOA y hardware solo pueden empatar el óptimo en esta instancia pequeña.
+- Si la mejora aparece solo después de reparación, debe reportarse como mejora del pipeline híbrido, no del hardware aislado.
 
 ------------------------------------------------------------------------
 
